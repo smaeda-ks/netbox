@@ -9,6 +9,7 @@ RUN git clone --depth 1 $URL -b $BRANCH .  && \
 
 ADD docker/docker-entrypoint.sh /docker-entrypoint.sh
 ADD netbox/netbox/configuration.docker.py /opt/netbox/netbox/netbox/configuration.py
+RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
